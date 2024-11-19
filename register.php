@@ -23,7 +23,6 @@ if(isset($_POST['submit'])){
       if($pass != $cpass){
          $message[] = 'confirm password not matched!';
       }else{
-         mysqli_query($conn, "INSERT INTO `users`(name, lname, email, password, user_type) VALUES('$name','$lname', '$email', '$cpass', '$user_type')") or die('query failed');
          $message[] = 'registered successfully!';
          header('location:login.php');
          $add_users_query=mysqli_query($conn, "INSERT INTO `users`(name,lname, email, password,image, user_type) VALUES('$name','$lname', '$email', '$cpass','$image', '$user_type')") or die('query failed');
